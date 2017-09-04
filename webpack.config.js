@@ -9,8 +9,10 @@ module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve('dist'),
-        filename: 'main.js'
+        filename: 'main.js',
+        publicPath: '/'
     },
+    devtool: 'eval-source-map',
     module: {
         loaders: [
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
@@ -19,5 +21,8 @@ module.exports = {
     },
     plugins: [
         HtmlWebpackPluginConfig
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 }

@@ -1,7 +1,12 @@
-console.log('Webpack loaded')
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app.jsx';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import routes from './routes';
+
+ReactDOM.render(
+    <BrowserRouter>
+        {routes}
+    </BrowserRouter>,
+  document.getElementById('root')
+);
